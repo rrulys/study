@@ -1,0 +1,17 @@
+<?php if($stats): ?>
+	<?php foreach($stats['playerStatSummaries'] as $stat): ?>
+		<table width="100%">
+		<tr><th class="text-left">Type</th><th class="text-right">Wins</th></tr>
+		<tr><td class="text-left"><?php echo $stat['playerStatSummaryType']; ?></td><td class="text-right"><?php echo $stat['wins']; ?></td></tr>
+		<?php if(count($stat['aggregatedStats']) > 0): ?>
+			<tr><th class="text-left">Name</th><th class="text-right">Count</th></tr>
+			<?php foreach($stat['aggregatedStats'] as $key => $details): ?>
+				<tr><td class="text-left"><b><?php echo $key; ?></b></td><td class="text-right"><?php echo $details; ?></td></tr>
+			<?php endforeach; ?>
+		<?php endif; ?>
+		</td></tr>
+		</table>
+
+	<?php endforeach; ?>
+<?php endif; ?>
+

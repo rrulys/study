@@ -1,0 +1,10 @@
+<div class="row">
+	<div class="small-12 medium-12 large-12 columns">
+		<?php if(!$player): ?> 
+			<h3 style="color: #FFFFFF;">Player not found</h3>
+		<?php else: ?>
+			<?php echo $__env->make('internal._partials.user', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+			<?php echo $__env->make('internal._partials.stats', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+		<?php endif; ?>
+	</div>
+</div>
